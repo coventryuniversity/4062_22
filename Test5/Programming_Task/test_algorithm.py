@@ -36,4 +36,14 @@ class testAlgorithm(unittest.TestCase):
             out = fixme.fib(target)
             print(f"Testing {target},  Result{out}")
             self.assertEqual(out, answers[x])
-        
+
+
+    def testLinear(self):
+        """
+        Compare our linear and recusrive outputs
+        """
+
+        out = fixme.fib(20)
+        linout = fixme.linearFib(20)
+        self.assertEqual(out, 6765)
+        self.assertEqual(out, linout)

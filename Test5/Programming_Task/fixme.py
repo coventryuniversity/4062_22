@@ -22,6 +22,7 @@ Given an Input of n
 """
 
 import logging
+import math
 
 
 def fib(n):
@@ -40,9 +41,21 @@ def fib(n):
         return
     
 
+def linearFib(n):
+    """
+    Did you know we can also make some Recursive functions linear.
+    Google Diagonal Matrix for Recursive Functions and be amazed.
+    """
+
+    value = (1/math.sqrt(5)) * (math.pow(((1+math.sqrt(5))/2), n) - math.pow(((1 - math.sqrt(5))/2), n))
+    return int(value) #floating point approximations
+    
 if __name__ == "__main__":
     out = fib(1)
     print(f"Fibbonachi of 1 is {out}")
 
     out = fib(10)
     print(f"Fibbonachi of 10 is {out}")
+
+    out = linearFib(10)
+    print(f"Linear Fibbonachi of 10 is {out}")
